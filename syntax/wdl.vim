@@ -15,7 +15,8 @@ syntax region wdlCommandParameter start=/\v\$\{/ end=/\v\}/ oneline contained co
 syntax match wdlCommandParameterName /\v\zs\w+\ze([\\?\\*\\+]?\})/ contained containedin=wdlCommandParameter
 
 " Keywords
-syntax keyword wdlKeyword workflow task output call
+syntax keyword wdlKeyword workflow task call nextgroup=wdlTaskName
+syntax keyword wdlKeyword output
 syntax keyword wdlType Boolean Int Float String File Uri nextgroup=wdlIdentifier
 syntax keyword wdlImport import
 
@@ -24,6 +25,7 @@ syntax region wdlType start=/\(Map\|Array\)\[/ end=/\]/ contains=wdlType nextgro
 
 " Identifiers
 syntax match wdlIdentifier /\v\s*\w+/ contained
+syntax match wdlTaskName /\v\s*\w+/ contained
 
 " Strings
 syntax region wdlString start=/"/ skip=/\\"/ end=/"/ oneline contains=wdlInterpolationWrapper
@@ -37,6 +39,7 @@ highlight link wdlCommandParameter Comment
 highlight link wdlKeyword Keyword
 highlight link wdlCommandKeyword Keyword
 highlight link wdlCommand Punctuation
+highlight link wdlTaskName Underlined
 
 highlight link wdlCommandParameterName Identifier
 highlight link wdlIdentifier Identifier
