@@ -39,7 +39,7 @@ highlight link wdlCommandParameter Comment
 highlight link wdlKeyword Keyword
 highlight link wdlCommandKeyword Keyword
 highlight link wdlCommand Punctuation
-highlight link wdlTaskName Underlined
+highlight link wdlTaskName Identifier
 
 highlight link wdlCommandParameterName Identifier
 highlight link wdlIdentifier Identifier
