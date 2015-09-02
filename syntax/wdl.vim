@@ -9,6 +9,7 @@ endif
 
 " command { ... } section
 syntax region wdlCommandSection start="command\s*{" end="\v\}" contains=wdlCommand,wdlCommandParameter,wdlKeyword,wdlCommandDelimiter
+syntax region wdlCommandSection2 start="command\s*<<<" end="\v>>>" contains=wdlCommand,wdlCommandParameter,wdlKeyword,wdlCommandDelimiter
 syntax keyword wdlCommandKeyword command contained containedin=wdlCommandSection
 syntax match wdlCommand "\zs.\{-}\ze\${" contained containedin=wdlCommandSection
 syntax region wdlCommandParameter start=/\v\$\{/ end=/\v\}/ oneline contained containedin=wdlCommandSection contains=wdlType,wdlString,wdlCommandParameterName
@@ -16,7 +17,7 @@ syntax match wdlCommandParameterName /\v\zs\w+\ze([\\?\\*\\+]?\})/ contained con
 
 " Keywords
 syntax keyword wdlKeyword workflow task call nextgroup=wdlTaskName
-syntax keyword wdlKeyword output
+syntax keyword wdlKeyword output scatter
 syntax keyword wdlType Boolean Int Float String File Uri nextgroup=wdlIdentifier
 syntax keyword wdlImport import
 
