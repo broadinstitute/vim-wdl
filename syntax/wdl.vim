@@ -17,7 +17,7 @@ syntax match wdlCommandParameterName /\v\zs\w+\ze([\\?\\*\\+]?\})/ contained con
 
 " Keywords
 syntax keyword wdlKeyword workflow task call nextgroup=wdlTaskName
-syntax keyword wdlKeyword output scatter
+syntax keyword wdlKeyword output scatter if then else runtime
 syntax keyword wdlType Boolean Int Float String File Uri nextgroup=wdlIdentifier
 syntax keyword wdlImport import
 
