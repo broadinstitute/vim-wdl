@@ -34,6 +34,7 @@ syntax region wdlInterpolationWrapper start="\v\$\{" end="\v\}" contained contai
 syntax match wdlInterpolatedString "\v\w+" contained containedin=wdlInterpolationWrapper
 
 " Comments
+syntax keyword wdlCommentTodo contained TODO FIXME
 syntax match wdlComment "\v#.*$"
 
 highlight link wdlCommandParameter Comment
@@ -50,3 +51,4 @@ highlight link wdlImport Include
 highlight link wdlInterpolationWrapper Include
 highlight link wdlInterpolatedString Include
 highlight link wdlComment Comment
+highlight link wdlCommentTodo Todo
