@@ -24,6 +24,9 @@ syntax keyword wdlImport import
 " Compound Types
 syntax region wdlType start=/\(Map\|Array\)\[/ end=/\]/ contains=wdlType nextgroup=wdlIdentifier
 
+" Optional Types
+syntax match wdlType /\(\w\)\@<=?/ contains=wdlType nextgroup=wdlIdentifier
+
 " Identifiers
 syntax match wdlIdentifier /\v\s*\w+/ contained
 syntax match wdlTaskName /\v\s*\w+/ contained
